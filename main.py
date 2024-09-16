@@ -3,6 +3,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
+
 def fetch_books(page_number: int):
     url = f"https://books.toscrape.com/catalogue/page-{page_number}.html"
 
@@ -29,6 +30,7 @@ def fetch_books(page_number: int):
 
     return books
 
+
 def main():
     all_books = []
     max_pages = 10
@@ -41,6 +43,7 @@ def main():
     # Save data to file
     with open('books.json', 'w') as f:
         json.dump(all_books, f, indent=4)
+
 
 if __name__ == '__main__':
     main()
